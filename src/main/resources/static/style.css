@@ -1,0 +1,49 @@
+
+
+
+ body{
+
+}
+
+div{
+    border-radius: 5px;
+    padding: 5px;
+}
+#sections{
+    margin-top: 5px;
+    padding: 0;
+}
+.containers{
+    width: 600px;
+    height: 255px;
+}
+
+#message {
+    overflow: hidden;
+}
+
+#messages {
+    padding: 10px;
+    box-sizing: border-box;
+    max-height: 150px; /* Fixed height for scrolling */
+    overflow-y: hidden; /* Initially hidden, controlled via JavaScript */
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    position: relative;
+}
+
+#messages p {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+
+.custom-bg {
+    background-color: rgba(173, 216, 230, 0.5); /* Light blue with 20% opacity */
+    border-radius: 8px; /* Optional: To soften the edges */
+}
+
+
+
