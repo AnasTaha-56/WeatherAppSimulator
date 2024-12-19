@@ -42,6 +42,9 @@ public class PayloadService {
 
         System.out.println("Device IP :" + ip);
 
+        String timestamp = java.time.LocalDateTime.now()
+                .format(java.time.format.DateTimeFormatter.ofPattern("MM/dd-HH:mm"));
+
         String endpoint;
         String message;
         String messageEndpoint = "/messages";
@@ -54,7 +57,7 @@ public class PayloadService {
                 case "3" -> endpoint = "/temperatureRoomThree";
                 default -> endpoint = "/noWhereToGo";
             }
-            message = "Room " + ip + " : " + _messageUIService.processTemperature((Temperature) measurement);
+            message = "Room " + ip + " [" + timestamp + "] : " + _messageUIService.processTemperature((Temperature) measurement);
             System.out.println("TEMP found and added");
         } else if (measurement.getType().equals("Humidity")) {
             switch (ip) {
@@ -63,7 +66,7 @@ public class PayloadService {
                 case "3" -> endpoint = "/humidityRoomThree";
                 default -> endpoint = "/noWhereToGo";
             }
-            message = "Room " + ip + " : " + _messageUIService.processHumidity((Humidity) measurement);
+            message = "Room " + ip + " [" + timestamp + "] : " + _messageUIService.processHumidity((Humidity) measurement);
             System.out.println("HUMID found and added");
         } else {
             System.out.println("false reading");
